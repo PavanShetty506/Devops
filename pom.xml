@@ -83,6 +83,87 @@
         </configuration>
       </plugin>
     </plugins>
+           <pluginRepositories>
+  <pluginRepository>
+    <id>repository.jboss.org_thirdparty-releases</id>
+    <name>JBoss.org third party releases repository</name>
+    <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </pluginRepository>
+  <pluginRepository>
+    <id>repository.jboss.org_thirdparty-uploads</id>
+    <name>JBoss.org third party uploads repository</name>
+    <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </pluginRepository>
+</pluginRepositories>
+
+<repositories>
+  <repository>
+    <id>repository.jboss.org_thirdparty-releases</id>
+    <name>JBoss.org third party releases repository</name>
+    <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-releases</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+  <repository>
+    <id>repository.jboss.org_thirdparty-uploads</id>
+    <name>JBoss.org third party uploads repository</name>
+    <url>https://repository.jboss.org/nexus/content/repositories/thirdparty-uploads</url>
+    <releases>
+      <enabled>true</enabled>
+    </releases>
+    <snapshots>
+      <enabled>false</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+
+<plugin>
+  <groupId>org.codehaus.cargo</groupId>
+  <artifactId>cargo-maven2-plugin</artifactId>
+  <version>${cargo.plugin.version}</version>
+  <configuration>
+    <container>
+      <containerId>jboss51x</containerId>
+      <type>remote</type>
+    </container>
+    <configuration>
+      <type>runtime</type>
+      <properties>
+        <cargo.hostname>production27</cargo.hostname>
+        <cargo.rmi.port>11099</cargo.rmi.port>
+      </properties>
+    </configuration>
+  </configuration>
+  <dependencies>
+    <dependency>
+      <groupId>org.jboss.integration</groupId>
+      <artifactId>jboss-profileservice-spi</artifactId>
+      <version>5.1.0.GA</version>
+    </dependency>
+    <dependency>
+      <groupId>org.jboss.jbossas</groupId>
+      <artifactId>jboss-as-client</artifactId>
+      <version>5.1.0.GA</version>
+      <type>pom</type>
+    </dependency>
+  </dependencies>
+</plugin>
 
     <pluginManagement>
       <plugins>
@@ -152,6 +233,8 @@
           <artifactId>taglist-maven-plugin</artifactId>
           <version>2.4</version>
         </plugin>
+               
+               
 
         <plugin>
           <groupId>org.mortbay.jetty</groupId>
