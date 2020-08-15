@@ -158,6 +158,31 @@
           <artifactId>jetty-maven-plugin</artifactId>
           <version>8.0.0.M1</version>
         </plugin>
+               
+               <plugin>
+  <groupId>org.codehaus.cargo</groupId>
+  <artifactId>cargo-maven2-plugin</artifactId>
+  <version>1.2.0</version>
+  <configuration>
+    <container>
+      <containerId>jboss7.x</containerId>
+      <home>/usr/jboss-eap-7.2</home>
+       <timeout>600000</timeout>
+        <append>false</append>
+    </container>
+    <configuration>
+      <type>existing</type>
+      <home>/usr/jboss-eap-7.2</home>
+      <properties>
+       <cargo.servlet.port>9991</cargo.servlet.port>
+       <cargo.jboss.configuration>default</cargo.jboss.configuration>
+        <cargo.hostname>52.165.147.139</cargo.hostname>
+        <cargo.rmi.port>1099</cargo.rmi.port>
+      </properties>
+    </configuration>
+  </configuration>
+
+  </plugin> 
       </plugins>
     </pluginManagement>
   </build>
