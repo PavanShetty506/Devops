@@ -78,10 +78,10 @@
  <goal>deploy</goal>
  </goals>
  <configuration>
- <hostname>ip</hostname>
+ <hostname>52.165.147.139</hostname>
  <port>9999</port>
- <username>aaa</username>
- <password>xxx</password>
+ <username>jboss</username>
+ <password>jboss12#</password>
  </configuration>
  </execution>
  </executions>
@@ -100,7 +100,7 @@
       <type>runtime</type>
       <properties>
         <cargo.hostname>production27</cargo.hostname>
-        <cargo.jboss.management-native.port>19999</cargo.jboss.management-native.port>
+        <cargo.jboss.management-native.port>9999</cargo.jboss.management-native.port>
       </properties>
     </configuration>
   </configuration>
